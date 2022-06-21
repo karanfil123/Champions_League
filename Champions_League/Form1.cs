@@ -193,15 +193,38 @@ namespace Champions_League
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int lbxAGroup = lbxA.Items.Count;
+            int[] takimlar = new int[lbxAGroup];            
             Random random = new Random();
-            List<int> choseTeams = new List<int>();
+            
             int team1Skor = 0;
             int team2Skor = 0;
             int team1Puan = 0;
             int team2Puan = 0;
+
             for (int i = 0; i < 6; i++)
             {
-               
+                while (i < 1)
+                {
+                    int secim = random.Next(0, lbxAGroup);
+                    if (Array.IndexOf(takimlar, secim) == -1)
+                    {
+                        takimlar[i] = secim;
+                        label5.Text += lbxA.Items[secim];
+                        label6.Text += lbxA.Items[secim];
+                        label7.Text += lbxA.Items[secim];
+                        label8.Text += lbxA.Items[secim];
+                        label9.Text += lbxA.Items[secim];
+                        label10.Text += lbxA.Items[secim];
+                        label11.Text += lbxA.Items[secim];
+                        label12.Text += lbxA.Items[secim];
+                        label13.Text += lbxA.Items[secim];
+                        label14.Text += lbxA.Items[secim];
+                        label15.Text += lbxA.Items[secim];
+                        label16.Text += lbxA.Items[secim];
+                        i++;
+                    }
+                }
             }
         }
     }
